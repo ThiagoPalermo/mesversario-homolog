@@ -616,3 +616,24 @@ body {
     margin-top: -2px;
   }
 }
+
+/* ===============================
+📱 MOBILE — AJUSTE DE CHÃO DO NATAL
+=============================== */
+@media (max-width: 600px) {
+
+  /* empurra o conjunto para baixo */
+  .scene.natal {
+    padding-bottom: 40px; /* antes estava alto demais */
+  }
+
+  /* árvore encosta visualmente na neve */
+  .tree {
+    margin-top: 24px;
+  }
+
+  /* presentes mais colados ao chão */
+  .gifts {
+    margin-top: 6px;
+  }
+}
