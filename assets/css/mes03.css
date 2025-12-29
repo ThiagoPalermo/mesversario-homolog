@@ -578,7 +578,7 @@ body {
     flex-direction: column;
     align-items: center;
 
-    padding-top: 150px;/* diminua pra aproximar do topo, controla a alura do texto de natal*/
+    padding-top: 150px;/* diminua pra aproximar do topo, controla a altura do texto de natal*/
     padding-bottom: 80px;
   }
 
