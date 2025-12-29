@@ -562,17 +562,17 @@ body {
 
   .natal {
     position: relative;
-    padding-top: 80px;
+    padding-top: 70px;
     padding-bottom: 60px;
   }
 
-  /* TEXTO — vem primeiro visualmente */
-  .texto-natal {
+  /* TEXTO DO NATAL — PRIMEIRO */
+  .natal-text {
     position: relative;
     z-index: 5;
 
     max-width: 90%;
-    margin: 0 auto 26px auto;
+    margin: 0 auto 28px auto;
     text-align: center;
 
     font-size: 1.05rem;
@@ -585,23 +585,23 @@ body {
     backdrop-filter: blur(6px);
   }
 
-  /* ÁRVORE — volta para o fluxo normal */
+  /* ÁRVORE — VOLTA AO FLUXO NORMAL */
   .tree {
     position: relative !important;
     left: 50% !important;
     bottom: auto !important;
     transform: translateX(-50%);
-    margin-top: 10px;
+    margin-top: 6px;
     z-index: 4;
   }
 
-  /* PRESENTES — grudados no pé da árvore */
+  /* PRESENTES — CENTRALIZADOS NO PÉ */
   .gifts {
     position: relative !important;
     left: 50% !important;
     bottom: auto !important;
     transform: translateX(-50%);
-    margin-top: 6px;
+    margin-top: 8px;
     z-index: 4;
   }
 }
