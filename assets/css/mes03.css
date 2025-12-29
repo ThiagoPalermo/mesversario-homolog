@@ -584,13 +584,14 @@ body {
     position: static;
     width: 90%;
     max-width: 320px;
-    margin-bottom: 80px;
+    margin-bottom: auto;
+    margin-top: auto;
 
     text-align: center;
     background: rgba(10, 61, 98, 0.9);
     padding: 16px;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 
     transform: none;
     right: auto;
