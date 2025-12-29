@@ -578,7 +578,7 @@ body {
     flex-direction: column;
     align-items: center;
 
-    padding-top: 90px;
+    padding-top: 50px;/* diminua pra aproximar do topo, controla a alura do texto de natal*/
     padding-bottom: 80px;
   }
 
@@ -615,10 +615,15 @@ body {
 
 .gifts {
   position: absolute;
-  bottom: 15px;
+  bottom: 12px; /* ⬅️ CONTROLA ALTURA DOS PRESENTES NO CHÃO */
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+}
+
+/* ajuste fino de alinhamento com o tronco */
+.tree::after {
+  z-index: 3;
 }
 
 /* ===============================
