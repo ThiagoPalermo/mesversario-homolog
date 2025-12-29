@@ -577,49 +577,44 @@ body {
     flex-direction: column;
     align-items: center; /* Centraliza os filhos horizontalmente */
     justify-content: flex-end;
-    padding-bottom: 48px;
+    padding-bottom: 30px;
   }
 
   .natal-text {
-    position: relative;
+    position: static;
     width: 90%;
-    max-width: 340px;
-    
-    /* ✅ ADICIONE ISSO: Reseta as posições herdadas do desktop */
-    right: auto;
-    left: auto;
-    bottom: auto;
-
-    /* Garante o centro pelo margin */
-    margin: 0 auto 20px auto; 
+    max-width: 320px;
+    margin-bottom: 20px;
 
     text-align: center;
-    background: rgba(10, 61, 98, 0.85); /* Fundo um pouco mais escuro para contraste */
+    background: rgba(10, 61, 98, 0.9);
     padding: 16px;
     border-radius: 16px;
-    z-index: 10; /* Garante que fique acima da árvore se sobrepor */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+    transform: none;
+    right: auto;
+    left: auto;
   }
 
   /* Árvore e presentes */
   .tree {
     position: relative;
     left: auto; /* Remove deslocamento lateral da árvore se houver */
-    bottom: 0;
+    bottom: auto;
     transform: none;
-    margin: 0 auto;
+    margin: 0;
   }
 
   .gifts {
     position: relative;
     left: auto;
-    bottom: 0;
+    bottom: auto;
     transform: none;
-    justify-content: center; /* Centraliza os presentes */
-    margin: -10px auto 0; /* Ajuste fino vertical */
+    margin-top: -10px;
   }
 
   .snow-ground {
-    height: 42px;
+    height: 40px;
   }
 }
