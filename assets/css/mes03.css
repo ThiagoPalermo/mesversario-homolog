@@ -582,16 +582,18 @@ body {
 
   /* TEXTO — AJUSTE DE ALTURA AQUI */
   .natal-text {
-    position: relative;
-    width: 90%;
-    max-width: 340px;
-    margin-bottom: 10px; /* 👈 ALTERE SOMENTE AQUI */
-    text-align: center;
-    background: rgba(0,0,0,0.35);
-    padding: 14px 16px;
-    border-radius: 16px;
-    z-index: 3;
-  }
+  position: relative;
+  width: 90%;
+  max-width: 340px;
+
+  margin: 0 auto 10px auto; /* 👈 CENTRALIZA REAL (horizontal) */
+
+  text-align: center;
+  background: rgba(0,0,0,0.35);
+  padding: 14px 16px;
+  border-radius: 16px;
+  z-index: 3;
+}
 
   /* ÁRVORE — ENCOSTADA NO CHÃO */
   .tree {
