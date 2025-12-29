@@ -572,51 +572,43 @@ body {
 =============================== */
 @media (max-width: 600px) {
 
-  /* seção vira layout vertical */
   .scene.natal {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-
-    padding-bottom: 60px; /* espaço do chão */
+    padding-bottom: 48px;
   }
 
-  /* TEXTO — AGORA REALMENTE ACIMA DA ÁRVORE */
+  /* TEXTO */
   .natal-text {
     position: relative;
     width: 90%;
     max-width: 340px;
-
-    margin-bottom: 16px; /* ⬅️ CONTROLA DISTÂNCIA DO TEXTO ATÉ A ÁRVORE */
-
+    margin-bottom: 18px; /* ← ajuste fino aqui se quiser */
     text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.55;
-
-    background: rgba(0,0,0,0.3);
-    padding: 14px 16px;
-    border-radius: 16px;
-
-    backdrop-filter: blur(6px);
-    z-index: 3;
   }
 
-  /* BLOCO DA ÁRVORE */
+  /* ÁRVORE — CENTRALIZAÇÃO REAL */
   .tree {
     position: relative;
     bottom: 0;
     left: 0;
     transform: none;
-    margin-bottom: 6px;
+
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  /* PRESENTES COLADOS NO PÉ */
+  /* PRESENTES — CENTRALIZADOS NO TRONCO */
   .gifts {
     position: relative;
     bottom: 0;
     left: 0;
     transform: none;
+
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 4px;
   }
 
