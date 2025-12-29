@@ -647,8 +647,7 @@ body {
     height: 42px;
   }
 
-  .tree,
-  .gifts {
+  .tree {
     bottom: 42px;
   }
 }
