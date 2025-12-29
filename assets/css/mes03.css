@@ -613,9 +613,14 @@ body {
   .gifts {
     position: relative;
     left: auto;
-    bottom: auto;
+    bottom: 0;
     transform: none;
-    margin-top: -10px;
+    margin-top: -22px;
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    z-index: 3;
   }
 
   .snow-ground {
