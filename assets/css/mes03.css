@@ -572,32 +572,30 @@ body {
 =============================== */
 @media (max-width: 600px) {
 
-  /* seção passa a controlar o layout */
+  /* seção vira layout vertical */
   .scene.natal {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
 
-    padding-top: 150px;/* diminua pra aproximar do topo, controla a altura do texto de natal*/
-    padding-bottom: 80px;
+    padding-bottom: 60px; /* espaço do chão */
   }
 
-  /* TEXTO — PRIMEIRO, NO FLUXO */
+  /* TEXTO — AGORA REALMENTE ACIMA DA ÁRVORE */
   .natal-text {
     position: relative;
-    order: 1;
-
     width: 90%;
     max-width: 340px;
 
-    margin-bottom: 28px;
+    margin-bottom: 16px; /* ⬅️ CONTROLA DISTÂNCIA DO TEXTO ATÉ A ÁRVORE */
 
     text-align: center;
     font-size: 1.05rem;
     line-height: 1.55;
 
     background: rgba(0,0,0,0.3);
-    padding: 16px 18px;
+    padding: 14px 16px;
     border-radius: 16px;
 
     backdrop-filter: blur(6px);
@@ -606,24 +604,22 @@ body {
 
   /* BLOCO DA ÁRVORE */
   .tree {
-  position: absolute;
-  bottom: 36px; /* exatamente a altura do chão */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    margin-bottom: 6px;
+  }
 
-.gifts {
-  position: absolute;
-  bottom: 12px; /* ⬅️ CONTROLA ALTURA DOS PRESENTES NO CHÃO */
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
+  /* PRESENTES COLADOS NO PÉ */
+  .gifts {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    margin-top: 4px;
+  }
 
-/* ajuste fino de alinhamento com o tronco */
-.tree::after {
-  z-index: 3;
 }
 
 /* ===============================
@@ -655,5 +651,4 @@ body {
   .tree {
     bottom: 42px;
   }
-}
 }
