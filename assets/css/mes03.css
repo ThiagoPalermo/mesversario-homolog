@@ -205,7 +205,7 @@ body {
   opacity: .95;
 }
 
-/* ❄️ NEVE NO CHÃO */
+/* ❄️ NEVE NO CHÃO 
 .natal::after {
   content: "";
   position: absolute;
@@ -219,6 +219,18 @@ body {
     #ffffffcc 45%,
     transparent 100%
   );
+  z-index: 1;
+}*/
+
+/* ===============================
+❄️ CHÃO DE NEVE REAL — NATAL
+=============================== */
+.snow-ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 36px;
+  background: linear-gradient(#ffffff, #f0f0f0);
   z-index: 1;
 }
 
@@ -594,27 +606,19 @@ body {
 
   /* BLOCO DA ÁRVORE */
   .tree {
-    position: relative;
-    order: 2;
+  position: absolute;
+  bottom: 36px; /* exatamente a altura do chão */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
 
-    left: auto;
-    bottom: auto;
-    transform: none;
-
-    margin-bottom: 6px;
-  }
-
-  /* PRESENTES — LOGO ABAIXO */
-  .gifts {
-    position: relative;
-    order: 3;
-
-    left: auto;
-    bottom: auto;
-    transform: none;
-
-    margin-top: -2px;
-  }
+.gifts {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 
 /* ===============================
@@ -636,4 +640,16 @@ body {
   .gifts {
     margin-top: 6px;
   }
+}
+
+@media (max-width: 600px) {
+  .snow-ground {
+    height: 42px;
+  }
+
+  .tree,
+  .gifts {
+    bottom: 42px;
+  }
+}
 }
