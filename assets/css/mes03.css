@@ -566,13 +566,13 @@ body {
     padding-bottom: 60px;
   }
 
-  /* TEXTO DO NATAL — PRIMEIRO */
+  /* TEXTO — PERMANECE CORRETO */
   .natal-text {
     position: relative;
-    z-index: 5;
+    z-index: 6;
 
     max-width: 90%;
-    margin: 0 auto 28px auto;
+    margin: 0 auto 26px auto;
     text-align: center;
 
     font-size: 1.05rem;
@@ -585,23 +585,21 @@ body {
     backdrop-filter: blur(6px);
   }
 
-  /* ÁRVORE — VOLTA AO FLUXO NORMAL */
+  /* 🌲 ÁRVORE — VOLTA AO LUGAR ORIGINAL */
   .tree {
-    position: relative !important;
-    left: 50% !important;
-    bottom: auto !important;
-    transform: translateX(-50%);
-    margin-top: 6px;
+    position: absolute !important;
+    bottom: 24px !important;
+    left: 28px !important;
+    transform: none !important;
     z-index: 4;
   }
 
-  /* PRESENTES — CENTRALIZADOS NO PÉ */
+  /* 🎁 PRESENTES — ALINHADOS NO PÉ DA ÁRVORE */
   .gifts {
-    position: relative !important;
-    left: 50% !important;
-    bottom: auto !important;
-    transform: translateX(-50%);
-    margin-top: 8px;
+    position: absolute !important;
+    bottom: 10px !important;
+    left: 26px !important;
+    transform: none !important;
     z-index: 4;
   }
 }
