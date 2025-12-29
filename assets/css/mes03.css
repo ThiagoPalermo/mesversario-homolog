@@ -208,6 +208,22 @@ body {
   filter: drop-shadow(0 0 12px rgba(46,204,113,0.6));
 }
 
+/* 🎄 FIO DE LUZ DO PISCA-PISCA */
+.tree::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: -42px;
+  width: 84px;
+  height: 90px;
+
+  border: 1.4px solid rgba(30, 20, 10, 0.45);
+  border-radius: 50%;
+
+  transform: rotate(-6deg);
+  pointer-events: none;
+}
+
 /* camada do meio */
 .tree::before {
   content: "";
