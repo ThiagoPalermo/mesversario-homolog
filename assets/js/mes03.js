@@ -17,26 +17,25 @@
 
   /* ❄️ NEVE */
   function initSnow() {
-    const container = document.querySelector(".natal");
-    if (!container) return;
+  const container = document.querySelector(".natal");
+  if (!container) return;
 
-    setInterval(() => {
-      const flake = document.createElement("div");
-      flake.style.cssText = `
-        position:absolute;
-        top:-10px;
-        left:${Math.random()*100}%;
-        width:${Math.random()*4+2}px;
-        height:${Math.random()*4+2}px;
-        background:white;
-        border-radius:50%;
-        opacity:${Math.random()};
-        animation: snowFall ${6+Math.random()*4}s linear;
-      `;
-      container.appendChild(flake);
-      setTimeout(() => flake.remove(), 10000);
-    }, 120);
+  function createSnowflake() {
+    const flake = document.createElement("div");
+    flake.className = "snowflake";
+
+    flake.style.left = Math.random() * 100 + "%";
+    flake.style.animationDuration = 4 + Math.random() * 4 + "s";
+    flake.style.opacity = 0.4 + Math.random() * 0.6;
+    flake.style.transform = `translateX(${Math.random() * 20 - 10}px)`;
+
+    container.appendChild(flake);
+
+    setTimeout(() => flake.remove(), 9000);
   }
+
+  setInterval(createSnowflake, 120);
+}
 
   /* 🎆 FOGOS */
   function initFireworks() {
