@@ -9,6 +9,15 @@
 </head>
 <body>
 
+  <!-- Música -->
+<audio id="musica" autoplay loop>
+  <source src="assets/musicas/musica03.mp3" type="audio/mp3">
+</audio>
+
+<button id="music-btn" aria-label="Tocar / pausar música">
+  <span id="icon" aria-hidden="true"></span>
+</button>
+
   <!-- NAV -->
   <button class="voltar" onclick="window.location.href='index.html'">Página Principal</button>
   <button class="arrow-nav left" id="prevMes">❮</button>
@@ -16,6 +25,10 @@
 
   <!-- 🎡 PARQUE -->
   <section class="scene parque">
+  <div class="parque-text">
+  <h1>Primeiros passeios, primeiras memórias</h1>
+  <p>Foi aqui que tudo começou a ganhar forma.</p>
+</div>
   <div class="ferris-wheel">
   <div class="wheel-spin">
     <span class="cabin" style="--i:0"></span>
@@ -32,6 +45,9 @@
 
   <!-- ❄️ NATAL -->
    <section class="scene natal">
+  <div class="natal-text">
+  <p id="natalTyping"></p>
+</div>
   <div class="tree">
     <div class="tree-star">★</div>
     <span class="ornament" style="top:30px; left:-18px; color:#e74c3c"></span>
@@ -56,6 +72,29 @@
 
   <!-- 🎆 ANO NOVO -->
   <section class="scene ano-novo">
+     <div class="ano-novo-container">
+
+    <h2 class="ano-novo-titulo">E assim começamos um novo capítulo ✨</h2>
+
+    <div class="carousel ano-novo-carousel">
+      <div class="slides">
+        <img src="assets/imagens/mes03/01.jpg" class="slide">
+        <img src="assets/imagens/mes03/02.jpg" class="slide">
+        <img src="assets/imagens/mes03/03.jpg" class="slide">
+        <img src="assets/imagens/mes03/04.jpg" class="slide">
+        <img src="assets/imagens/mes03/05.jpg" class="slide">
+        <img src="assets/imagens/mes03/06.jpg" class="slide">
+        <img src="assets/imagens/mes03/07.jpg" class="slide">
+        <img src="assets/imagens/mes03/08.jpg" class="slide">
+        <img src="assets/imagens/mes03/09.jpg" class="slide">
+        <img src="assets/imagens/mes03/10.jpg" class="slide">
+      </div>
+
+      <button class="nav left" id="prev">❮</button>
+      <button class="nav right" id="next">❯</button>
+    </div>
+
+  </div>
     <canvas id="fireworks"></canvas>
   </section>
 

@@ -85,6 +85,27 @@ body {
   );
 }
 
+.parque-text {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  padding: 0 16px;
+}
+
+.parque-text h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 600;
+  text-shadow: 0 4px 12px rgba(0,0,0,.4);
+}
+
+.parque-text p {
+  margin-top: 8px;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  opacity: .9;
+}
+
 .ferris-wheel {
   position: absolute;
   bottom: -130px;
@@ -174,6 +195,16 @@ body {
   overflow: hidden;
 }
 
+.natal-text {
+  position: absolute;
+  right: 20px;
+  bottom: 80px;
+  max-width: 260px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  opacity: .95;
+}
+
 /* ❄️ NEVE NO CHÃO */
 .natal::after {
   content: "";
@@ -206,22 +237,6 @@ body {
   border-bottom: 100px solid #2ecc71;
 
   filter: drop-shadow(0 0 12px rgba(46,204,113,0.6));
-}
-
-/* 🎄 FIO DE LUZ DO PISCA-PISCA */
-.tree::after {
-  content: "";
-  position: absolute;
-  top: 28px;
-  left: -42px;
-  width: 84px;
-  height: 90px;
-
-  border: 1.4px solid rgba(30, 20, 10, 0.45);
-  border-radius: 50%;
-
-  transform: rotate(-6deg);
-  pointer-events: none;
 }
 
 /* camada do meio */
@@ -369,6 +384,79 @@ body {
   position: relative;
 }
 
+.ano-novo-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.ano-novo-titulo {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  text-shadow: 0 0 14px rgba(255,255,255,.5);
+}
+
+/* carrossel */
+.carousel {
+  position: relative;
+  width: 70%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.slides .slide {
+  width: 100%;
+  flex: 0 0 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 18px;
+}
+
+/* botões */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  padding: 12px;
+  font-size: 2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  backdrop-filter: blur(6px);
+  z-index: 20;
+}
+
+.nav.left {
+  left: 10px;
+  background: linear-gradient(135deg, #3ac8ff, #ffffff60);
+  color: white;
+}
+
+.nav.right {
+  right: 10px;
+  background: linear-gradient(135deg, #ff8a5d, #ffffff60);
+  color: white;
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .carousel {
+    width: 92%;
+  }
+
+  .nav {
+    display: none;
+  }
+}
+
 .ano-novo::before {
   content: "";
   position: absolute;
@@ -405,4 +493,64 @@ body {
     transform: translateY(110vh) translateX(30px);
     opacity: 0;
   }
+}
+
+#music-btn {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+
+  width: 54px;
+  height: 54px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #3ac8ff, #ff8a5d, #3ac8ff);
+  background-size: 300% 300%;
+  animation: gradientFlow 6s ease infinite, glowPulse 4s ease-in-out infinite;
+
+  box-shadow: 0 0 12px rgba(58,200,255,0.7);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 60;
+  transition: transform .2s ease;
+}
+
+#music-btn:hover {
+  transform: scale(1.09);
+}
+
+#icon {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#icon::before {
+  content: "♪";
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+}
+
+#icon.muted::before {
+  color: rgba(255,255,255,0.35);
+}
+
+#icon.muted::after {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 4px;
+  background: white;
+  border-radius: 3px;
+  transform: rotate(-35deg);
 }
