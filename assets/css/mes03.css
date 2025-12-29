@@ -574,56 +574,57 @@ body {
 📱 MOBILE — CORREÇÃO
 =============================== */
 @media (max-width: 600px) {
-
   .scene.natal {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza os filhos horizontalmente */
-    justify-content: flex-end;
-    padding-bottom: 30px;
+    align-items: center;
+    justify-content: flex-start; /* Mudamos para o topo para controlar as margens */
+    padding-top: 10vh; 
   }
 
   .natal-text {
     position: static;
     width: 90%;
     max-width: 320px;
-    margin-bottom: auto;
-    margin-top: auto;
-
+    margin-bottom: 40px; /* Espaço entre o texto e a árvore */
+    
     text-align: center;
     background: rgba(10, 61, 98, 0.9);
     padding: 16px;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-
-    transform: none;
-    right: auto;
-    left: auto;
   }
 
-  /* Árvore e presentes */
+  /* Centralização da Árvore */
   .tree {
     position: relative;
-    left: auto; /* Remove deslocamento lateral da árvore se houver */
+    left: auto;
     bottom: auto;
-    transform: none;
-    margin: 0;
+    margin-bottom: 0; /* Cola na base dos presentes */
   }
 
+  /* Ajuste Fino dos Presentes */
   .gifts {
     position: relative;
     left: auto;
-    bottom: 0;
-    transform: none;
-    margin-top: -22px;
-    margin-top: 2px;
+    bottom: auto;
+    margin-top: -15px; /* Puxa os presentes para cima do tronco */
     display: flex;
     justify-content: center;
-    gap: 6px;
-    z-index: 3;
+    gap: 8px;
+    z-index: 10;
   }
 
+  .gift {
+    width: 24px;
+    height: 20px;
+  }
+
+  /* Garante que o chão branco fique no fundo de tudo */
   .snow-ground {
+    position: absolute;
+    bottom: 0;
     height: 40px;
+    z-index: 1;
   }
 }
