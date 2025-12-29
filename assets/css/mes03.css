@@ -568,50 +568,55 @@ body {
 }
 
 /* ===============================
-📱 MOBILE — TEXTO DO NATAL ACIMA DA ÁRVORE
+📱 MOBILE — CORREÇÃO
 =============================== */
 @media (max-width: 600px) {
 
   .scene.natal {
     display: flex;
     flex-direction: column;
-    align-items: center;   /* ✅ ISSO é o que faltava */
+    align-items: center; /* Centraliza os filhos horizontalmente */
     justify-content: flex-end;
-
     padding-bottom: 48px;
   }
 
-  /* TEXTO — AJUSTE DE ALTURA AQUI */
   .natal-text {
-  position: relative;
-  width: 90%;
-  max-width: 340px;
+    position: relative;
+    width: 90%;
+    max-width: 340px;
+    
+    /* ✅ ADICIONE ISSO: Reseta as posições herdadas do desktop */
+    right: auto;
+    left: auto;
+    bottom: auto;
 
-  margin: 0 auto 10px auto; /* 👈 CENTRALIZA REAL (horizontal) */
+    /* Garante o centro pelo margin */
+    margin: 0 auto 20px auto; 
 
-  text-align: center;
-  background: rgba(0,0,0,0.35);
-  padding: 14px 16px;
-  border-radius: 16px;
-  z-index: 3;
-}
+    text-align: center;
+    background: rgba(10, 61, 98, 0.85); /* Fundo um pouco mais escuro para contraste */
+    padding: 16px;
+    border-radius: 16px;
+    z-index: 10; /* Garante que fique acima da árvore se sobrepor */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
 
-  /* ÁRVORE — ENCOSTADA NO CHÃO */
+  /* Árvore e presentes */
   .tree {
     position: relative;
-    left: 0;
+    left: auto; /* Remove deslocamento lateral da árvore se houver */
     bottom: 0;
     transform: none;
     margin: 0 auto;
   }
 
-  /* PRESENTES — NO PÉ DA ÁRVORE */
   .gifts {
     position: relative;
-    left: 0;
+    left: auto;
     bottom: 0;
     transform: none;
-    margin: 4px auto 0;
+    justify-content: center; /* Centraliza os presentes */
+    margin: -10px auto 0; /* Ajuste fino vertical */
   }
 
   .snow-ground {
