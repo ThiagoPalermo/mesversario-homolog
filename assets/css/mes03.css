@@ -575,9 +575,10 @@ body {
   .scene.natal {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;   /* ✅ ISSO é o que faltava */
     justify-content: flex-end;
-    padding-bottom: 42px; /* altura total do chão */
+
+    padding-bottom: 48px;
   }
 
   /* TEXTO — AJUSTE DE ALTURA AQUI */
