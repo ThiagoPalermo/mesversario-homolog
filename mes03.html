@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mês 0.3 </title>
+
+  <link rel="stylesheet" href="assets/css/mes03.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <button class="voltar" onclick="window.location.href='index.html'">Página Principal</button>
+  <button class="arrow-nav left" id="prevMes">❮</button>
+  <button class="arrow-nav right" id="nextMes">❯</button>
+
+  <!-- 🎡 PARQUE -->
+  <section class="scene parque">
+  <div class="ferris-wheel">
+  <div class="wheel-spin">
+    <span class="cabin" style="--i:0"></span>
+    <span class="cabin" style="--i:1"></span>
+    <span class="cabin" style="--i:2"></span>
+    <span class="cabin" style="--i:3"></span>
+    <span class="cabin" style="--i:4"></span>
+    <span class="cabin" style="--i:5"></span>
+    <span class="cabin" style="--i:6"></span>
+    <span class="cabin" style="--i:7"></span>
+  </div>
+</div>
+</section>
+
+  <!-- ❄️ NATAL -->
+   <section class="scene natal">
+  <div class="tree">
+    <div class="tree-star">★</div>
+    <span class="ornament" style="top:40px; left:-10px; background:#e74c3c"></span>
+    <span class="ornament" style="top:55px; left:8px; background:#f1c40f"></span>
+    <span class="ornament" style="top:65px; left:-2px; background:#3498db"></span>
+  </div>
+
+  <div class="gifts">
+    <div class="gift red"></div>
+    <div class="gift blue"></div>
+    <div class="gift green"></div>
+  </div>
+</section>
+   
+
+  <!-- 🎆 ANO NOVO -->
+  <section class="scene ano-novo">
+    <canvas id="fireworks"></canvas>
+  </section>
+
+  <script src="assets/js/unlock.js"></script>
+  <script src="assets/js/mes03.js"></script>
+</body>
+</html>

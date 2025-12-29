@@ -1,0 +1,253 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= BODY ================= */
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+}
+
+/* ================= NAV ================= */
+
+.voltar {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 50;
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #f38f0c, #8e44ad, #f6c453);
+  background-size: 300% 300%;
+  animation: navGlow 6s ease infinite;
+  box-shadow: 0 0 18px rgba(246,196,83,.7);
+}
+
+.arrow-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 50;
+  color: white;
+  background: linear-gradient(135deg, #f6c453, #8e44ad);
+  box-shadow: 0 0 18px rgba(246,196,83,.6);
+}
+
+.arrow-nav.left { left: 14px; }
+.arrow-nav.right { right: 14px; }
+
+@keyframes navGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ================= SCENES ================= */
+
+.scene {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* =================================================
+🎡 RODA GIGANTE — ESTRUTURA REAL (SEM DISCO)
+================================================= */
+
+.parque {
+  background: linear-gradient(
+    180deg,
+    #ffb36b 0%,
+    #ff7a6a 30%,
+    #b04b8f 60%,
+    #2b1055 100%
+  );
+}
+
+.ferris-wheel {
+  position: absolute;
+  bottom: -130px;
+  left: 50%;
+  width: 360px;
+  height: 360px;
+  transform: translateX(-50%);
+}
+
+/* tudo que gira */
+.wheel-spin {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: spin 50s linear infinite;
+
+  /* 👉 RAIOS PRETOS DENTRO DA RODA */
+  background: repeating-conic-gradient(
+    rgba(0,0,0,.75) 0deg 2deg,
+    transparent 2deg 22.5deg
+  );
+}
+
+/* aro externo */
+.wheel-spin::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 5px solid rgba(255,255,255,0.85);
+  box-shadow:
+    0 0 16px rgba(255,255,255,.4),
+    inset 0 0 10px rgba(0,0,0,.6);
+}
+
+/* aro interno */
+.wheel-spin::after {
+  content: "";
+  position: absolute;
+  inset: 26px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,.7);
+}
+
+/* eixo central */
+.ferris-wheel::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #111;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* CABINES — NÃO MEXER */
+.cabin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 18px;
+  background: white;
+  border-radius: 3px;
+  box-shadow: 0 0 6px rgba(255,255,255,.9);
+
+  transform:
+    rotate(calc(var(--i) * 45deg))
+    translateY(-175px)
+    rotate(calc(var(--i) * -45deg));
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* =================================================
+🎄 NATAL
+================================================= */
+
+.natal {
+  background: linear-gradient(#0a3d62, #145374);
+  position: relative;
+}
+
+.tree {
+  position: absolute;
+  bottom: 28px;
+  left: 32px;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 90px solid #2ecc71;
+}
+
+.tree::before {
+  content: "";
+  position: absolute;
+  top: 52px;
+  left: -40px;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-bottom: 70px solid #27ae60;
+}
+
+.tree::after {
+  content: "";
+  position: absolute;
+  top: 94px;
+  left: -10px;
+  width: 20px;
+  height: 26px;
+  background: #8e5a2b;
+}
+
+.tree-star {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: gold;
+  font-size: 20px;
+  text-shadow: 0 0 10px gold;
+}
+
+.gifts {
+  position: absolute;
+  bottom: 12px;
+  left: 36px;
+  display: flex;
+  gap: 6px;
+}
+
+.gift {
+  width: 22px;
+  height: 18px;
+  background: #e74c3c;
+  border-radius: 4px;
+}
+
+/* =================================================
+🎆 ANO NOVO
+================================================= */
+
+.ano-novo {
+  background: linear-gradient(#020111, #090a2a);
+  position: relative;
+}
+
+.ano-novo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(#fff 1px, transparent 1px),
+    radial-gradient(#fff 1px, transparent 1px);
+  background-size: 120px 120px, 200px 200px;
+  opacity: .4;
+}
+
+#fireworks {
+  width: 100%;
+  height: 100%;
+}
