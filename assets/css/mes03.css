@@ -561,41 +561,47 @@ body {
 @media (max-width: 600px) {
 
   .natal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 60px;
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 60px;
   }
 
+  /* TEXTO — vem primeiro visualmente */
   .texto-natal {
     position: relative;
+    z-index: 5;
+
     max-width: 90%;
-    margin-bottom: 28px;
+    margin: 0 auto 26px auto;
     text-align: center;
 
     font-size: 1.05rem;
-    line-height: 1.5;
+    line-height: 1.55;
 
-    background: rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.28);
     padding: 16px 18px;
     border-radius: 16px;
 
     backdrop-filter: blur(6px);
   }
 
-  /* árvore fica abaixo do texto */
+  /* ÁRVORE — volta para o fluxo normal */
   .tree {
-    position: relative;
-    left: auto;
-    bottom: auto;
+    position: relative !important;
+    left: 50% !important;
+    bottom: auto !important;
+    transform: translateX(-50%);
     margin-top: 10px;
+    z-index: 4;
   }
 
-  /* presentes continuam no pé da árvore */
+  /* PRESENTES — grudados no pé da árvore */
   .gifts {
-    position: relative;
-    left: auto;
-    bottom: auto;
+    position: relative !important;
+    left: 50% !important;
+    bottom: auto !important;
+    transform: translateX(-50%);
     margin-top: 6px;
+    z-index: 4;
   }
 }
