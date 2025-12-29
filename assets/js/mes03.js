@@ -83,9 +83,7 @@
         }
 
         function animate() {
-          //  ctx.fillStyle = "rgba(0,0,0,0.2)";
-          //  ctx.fillRect(0, 0, canvas.width, canvas.height);
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             for (let i = particles.length - 1; i >= 0; i--) {
                 const p = particles[i];
@@ -118,9 +116,9 @@
         animate();
     }
 
-    /* ⌨️ DIGITAÇÃO */
+    /* ⌨️ DIGITAÇÃO COM QUEBRA DE LINHA */
     function initTyping() {
-        const text = "Entre luzes, risadas e pequenos detalhes, o Natal ganhou um novo significado.";
+        const text = "Natal se aproximava e eu achava que não te teria mais, mas a maior felicidade pra mim foi ter você e poder participar mais na sua vida, eu te amo demais e pretendo continuar te amando sempre\nFim de ano não estarei contigo mas saiba que nesse novo ano e esse novo mes que conquistamos é um grande passo para nós dois, mal posso esperar para que isso se torne uma rotina te amo bbz, feliz 3 meses ❤️ ";
         const target = document.getElementById("natalTyping");
         if (!target) return;
 
@@ -129,7 +127,12 @@
 
         function typeText() {
             if (index < text.length) {
-                target.textContent += text.charAt(index);
+                const char = text.charAt(index);
+                if (char === "\n") {
+                    target.innerHTML += "<br>";
+                } else {
+                    target.innerHTML += char;
+                }
                 index++;
                 setTimeout(typeText, 45);
             }
@@ -144,9 +147,39 @@
             });
         }, { threshold: 0.4 });
 
-        observer.observe(document.querySelector(".natal"));
+        const sectionNatal = document.querySelector(".natal");
+        if (sectionNatal) observer.observe(sectionNatal);
     }
 
+    /* ⌨️ DIGITAÇÃO DO PARQUE */
+function initParqueTyping() {
+    const text = "Começamos a ir mais longe em nossas aventuras, a viagem pra SP e o parque... as idas a praia e até mesmo cinema, tudo é ótimo com você e por um momento tive medo de te perder... Jamais esquecerei todos esses momentos otimos em que vivi com você e fico muito feliz que estamos juntos e vamos continuar juntos 💕";
+    const target = document.getElementById("parqueTyping");
+    if (!target) return;
+
+    let index = 0;
+    let started = false;
+
+    function type() {
+        if (index < text.length) {
+            target.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 50); // Velocidade da digitação
+        }
+    }
+
+    // Inicia quando a seção do parque aparecer
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !started) {
+                started = true;
+                type();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(document.querySelector(".parque"));
+}
     /* 🎡 CARROSSEL */
     function initCarousel() {
         const slidesWrapper = document.querySelector(".slides");
@@ -163,10 +196,9 @@
             slidesWrapper.style.transform = `translateX(-${index * 100}%)`;
         }
 
-        btnNext.onclick = () => show(index + 1);
-        btnPrev.onclick = () => show(index - 1);
+        if (btnNext) btnNext.onclick = () => show(index + 1);
+        if (btnPrev) btnPrev.onclick = () => show(index - 1);
 
-        // Auto-play
         setInterval(() => show(index + 1), 5000);
     }
 
@@ -191,10 +223,11 @@
         musica.onpause = sync;
     }
 
-    // Inicializa tudo ao carregar
+    // Inicializa tudo
     initSnow();
     initFireworks();
     initTyping();
+    initParqueTyping();
     initCarousel();
     initAudio();
 
